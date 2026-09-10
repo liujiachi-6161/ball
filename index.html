@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捕光者游戏入口</title>
+    <script>
+        (function(){
+            // 判断是否为移动设备
+            function isMobileDevice() {
+                const ua = navigator.userAgent;
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+            }
+
+            if(isMobileDevice()){
+                // 手机端跳转到手机版
+                location.href = "./ball-mobile.html";
+            }else{
+                // PC端跳转到电脑版
+                location.href = "./ball.html";
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div style="text-align:center;margin-top:4rem;color:#fff;background:#0b1025;padding:2rem;font-family:system-ui">
+        <p>正在识别设备，正在跳转游戏……</p>
+        <p>如果没有跳转，请手动选择：</p>
+        <p><a href="./ball.html" style="color:#74a9ff">PC电脑版</a></p>
+        <p><a href="./ball-mobile.html" style="color:#74a9ff">手机移动版</a></p>
+    </div>
+</body>
+</html>
